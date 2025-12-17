@@ -2,7 +2,7 @@
 
 #include <Executors/{{ cookiecutter.executor_type }}.hpp>
 
-class { { cookiecutter.executor_name } } : public framework::{{ cookiecutter.executor_type }}
+class {{ cookiecutter.executor_name }} : public framework::{{ cookiecutter.executor_type }}
 {
 public:
 	void init(const framework::utility::ExecutorSettings & settings) override;

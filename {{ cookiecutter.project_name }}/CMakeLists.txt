@@ -50,3 +50,7 @@ target_link_libraries(
 	${PROJECT_NAME} PRIVATE
 	WebFramework::CXX_API
 )
+
+install(TARGETS ${PROJECT_NAME} DESTINATION .)
+install(DIRECTORY settings/ DESTINATION .)
+install(FILES config.json DESTINATION .)
