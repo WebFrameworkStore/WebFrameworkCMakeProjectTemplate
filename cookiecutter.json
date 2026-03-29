@@ -1,12 +1,12 @@
 {
   "project_name": "WebFrameworkCMakeProjectTemplate",
   "web_framework_version": "v3.3.0",
-  "with_python_executors": [false, true],
-  "with_python_api": [false, true],
-  "with_dotnet_executors": [true, false],
-  "with_csharp_api": [false, true],
-  "with_cc_api": [true, false],
-  "python_version": [3.14, 3.13, 3.12],
+  "with_python_executors": ["OFF", "ON"],
+  "with_python_api": ["OFF", "ON"],
+  "python_version": ["", "3.14", "3.13", "3.12"],
+  "with_dotnet_executors": ["ON", "OFF"],
+  "with_csharp_api": ["OFF", "ON"],
+  "with_cc_api": ["ON", "OFF"],
   "executor_name": "Executor",
   "executor_type": [
     "StatelessExecutor",

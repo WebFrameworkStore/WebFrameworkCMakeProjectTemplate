@@ -13,45 +13,12 @@ else()
 	set(ARTIFACT_NAME Windows-)
 endif()
 
-{% if "with_python_executors" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_PYTHON_EXECUTORS.ON-)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_PYTHON_EXECUTORS.OFF-)
-{% endif %}
-
-{% if "with_python_api" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_PYTHON_API.ON-)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_PYTHON_API.OFF-)
-{% endif %}
-
-{% if "python3.14" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}3.14-)
-{% elif "python3.13" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}3.13-)
-{% elif "python3.12" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}3.12-)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}-)
-{% endif %}
-
-{% if "with_dotnet_executors" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_DOTNET_EXECUTORS.ON-)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_DOTNET_EXECUTORS.OFF-)
-{% endif %}
-
-{% if "with_csharp_api" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CSHARP_API.ON-)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CSHARP_API.OFF-)
-{% endif %}
-
-{% if "with_cc_api" in cookiecutter.features %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CC_API.ON)
-{% else %}
-	set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CC_API.OFF)
-{% endif %}
+set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_PYTHON_EXECUTORS.{{ cookiecutter.with_python_executors }}-)
+set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_PYTHON_API.{{ cookiecutter.with_python_api }}-)
+set(ARTIFACT_NAME ${ARTIFACT_NAME}{{ cookiecutter.python_version }}-)
+set(ARTIFACT_NAME ${ARTIFACT_NAME}WITH_DOTNET_EXECUTORS.{{ cookiecutter.with_dotnet_executors }}-)
+set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CSHARP_API.{{ cookiecutter.with_csharp_api }}-)
+set(ARTIFACT_NAME ${ARTIFACT_NAME}BUILD_CC_API.{{ cookiecutter.with_cc_api }})
 
 if (UNIX)
     set(WEB_FRAMEWORK_URL ${WEB_FRAMEWORK_URL}/${ARTIFACT_NAME}.zip)
