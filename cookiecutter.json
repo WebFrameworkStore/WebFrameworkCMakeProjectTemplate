@@ -1,40 +1,17 @@
 {
   "project_name": "WebFrameworkCMakeProjectTemplate",
   "web_framework_version": "v3.3.0",
-  "features": [
-    "with_python_executors",
-    "with_python_api",
-    "with_dotnet_executors",
-    "with_csharp_api",
-    "with_cc_api",
-    "python3.14",
-    "python3.13",
-    "python3.12"
-  ],
+  "with_python_executors": [false, true],
+  "with_python_api": [false, true],
+  "with_dotnet_executors": [true, false],
+  "with_csharp_api": [false, true],
+  "with_cc_api": [true, false],
+  "python_version": [3.14, 3.13, 3.12],
   "executor_name": "Executor",
   "executor_type": [
     "StatelessExecutor",
     "StatefulExecutor",
     "HeavyOperationStatelessExecutor",
     "HeavyOperationStatefulExecutor"
-  ],
-  "__prompts__": {
-    "features": {
-      "type": "checkbox",
-      "choices": [
-        "with_python_executors",
-        "with_python_api",
-        "with_dotnet_executors",
-        "with_csharp_api",
-        "with_cc_api",
-        "python3.14",
-        "python3.13",
-        "python3.12"
-      ],
-      "default": [
-        "with_dotnet_executors",
-        "with_cc_api"
-      ]
-    }
-  }
+  ]
 }
